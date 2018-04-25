@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import CoderMirror from 'react-codemirror'
 
 class App extends Component {
   render() {
+    var options = {
+      lineNumbers: true,
+    };
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <CoderMirror value={"// code"} options={options} />
+        <div className="container">
+          <h1 className="jumbotron-heading text-center">1</h1>
+          <p className="text-center">
+            <button className="btn btn-primary mr-2">Increment</button>
+            <button className="btn btn-danger mr-2">Decrement</button>
+          </p>
+        </div>
       </div>
     );
   }
